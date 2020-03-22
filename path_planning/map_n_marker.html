@@ -6,14 +6,104 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
 	<script src="https://openlayers.org/en/v4.6.5/build/ol.js" type="text/javascript"></script>
-  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
   <script>
     /* OSM & OL example code provided by https://mediarealm.com.au/ */
     var map;
     var mapLng = 5.7116;
     var mapLat = 45.17695;
     var mapDefaultZoom = 16;
-    
+    var path = [
+    [
+        5.7126,
+        45.17677
+    ],
+    [
+        5.71297,
+        45.1767
+    ],
+    [
+        5.71333,
+        45.17748
+    ],
+    [
+        5.71335,
+        45.17752
+    ],
+    [
+        5.71338,
+        45.17758
+    ],
+    [
+        5.71373,
+        45.17824
+    ],
+    [
+        5.71397,
+        45.17874
+    ],
+    [
+        5.7143,
+        45.17945
+    ],
+    [
+        5.71455,
+        45.18001
+    ],
+    [
+        5.71455,
+        45.18007
+    ],
+    [
+        5.71469,
+        45.18008
+    ],
+    [
+        5.71495,
+        45.1801
+    ],
+    [
+        5.71523,
+        45.18011
+    ],
+    [
+        5.71523,
+        45.1802
+    ],
+    [
+        5.71523,
+        45.18024
+    ],
+    [
+        5.71522,
+        45.18027
+    ],
+    [
+        5.71522,
+        45.1803
+    ],
+    [
+        5.71522,
+        45.18033
+    ],
+    [
+        5.71522,
+        45.18037
+    ],
+    [
+        5.71521,
+        45.18041
+    ],
+    [
+        5.71521,
+        45.18045
+    ],
+    [
+        5.71523,
+        45.18045
+    ]
+];
     function initialize_map() {
       map = new ol.Map({
         target: "map",
@@ -51,12 +141,17 @@
       map.addLayer(vectorLayer); 
     }
 
-
   </script>
 </head>
 <body onload="initialize_map(); 
+	
 	add_map_point(45.18045 , 5.71523 );
 	add_map_point( 45.17695 , 5.7116 );
+	console.log(path[0]);
+	for ( var i=0; i < path.length; i++) {
+		add_map_point( path[i][1] , path[i][0] );
+	}
+	
 ">
   <div id="map" style="width: 100vw; height: 100vh;"></div>
 </body>
