@@ -43,21 +43,13 @@ plt.title('Original Path VS Extended ')
 plt.draw()
 plt.pause(0.001)
 
-# Define random control point C
-
+# Define random control point C and plot it
 x_c = float(decimal.Decimal(random.randrange(0,50))/100)
 y_c = float(decimal.Decimal(random.randrange(0,50))/100)
-
 plt.plot(x_c,y_c,'k*')
 
-# Get closest point of the path to C
-for idx,i in enumerate(projected_coord_extended):
-	print(utils.distance(i,(x_c,y_c)))
-
-
+# Find closest point to C in the discretized path and plot it
 index = utils.closest_node((x_c,y_c),projected_coord_extended)
-print(index)
 plt.plot(projected_coord_extended[index][0],projected_coord_extended[index][1],'c*')
-
 
 input("Press [enter] to continue.")
