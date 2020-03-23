@@ -20,6 +20,7 @@ market_p = utils.project(path[2])
 d = utils.distance(home_p,mid_p)
 d1 = utils.distance(mid_p,market_p)
 
+print(market_p)
 print(d)
 print(d1)
 
