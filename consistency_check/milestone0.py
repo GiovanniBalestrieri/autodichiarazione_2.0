@@ -14,9 +14,5 @@ projected_coord = []
 for i in data:
 	projected_coord.append(utils.project(i))
 
-
-
-print(data)
-
 print(projected_coord)
 
