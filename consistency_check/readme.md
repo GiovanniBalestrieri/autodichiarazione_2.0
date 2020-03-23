@@ -19,11 +19,6 @@ Given the Path S, apply a geometric transformation to all points in S. Apply a p
 ## Mileston 1
 
 From a sequence of planar coordinates, create a sequence of intermediate equidistant points
-
-Step 1 : From the sequence of projected points describing the path, create sequence of segments
-
-Step 2 : From the sequence of projected segments, create intermediate equidistant points from the start of the segment to its end. 
-
  
 ## Milestone 2
 
