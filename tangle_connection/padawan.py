@@ -9,7 +9,7 @@ my_data = TryteString.from_unicode('Fighting back Coronavirus using the Tangle! 
 
 # Generate a random address that doesn't have to belong to anyone
 my_address = Address.random(length= 81)
-
+print("address: " + str(my_address))
 # Tag is optional here
 my_tag = Tag(b'FIRST9TAG')
 
