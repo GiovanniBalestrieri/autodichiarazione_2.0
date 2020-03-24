@@ -7,7 +7,7 @@ api = Iota('https://nodes.devnet.iota.org:443', testnet=True)
 # Address to fetch data from
 # Replace with your random generated address from Tutorial 2. to fetch the data
 # that you uploaded.
-addy = Address(b'LXDEEBKXBMQXTTA9JZSKNTFTHW9ZFOJUOUELYWZPFPZYWQYPYDLJVYKLHPTUAP9UNEGTVXFTQFWPKTDJC')
+addy = Address(b'LBWRSAKI9RGXUUNJGCPRNRYMFIIZEFOKOZGUUFRMA9IXVENWA9QCDHEQVXOBPTI9FTW9NYSZFSSQNHEIBQGQQJQAFC')
 
 print('Fetching data from the Tangle...')
 # Fetch the transaction objects of the address from the Tangle

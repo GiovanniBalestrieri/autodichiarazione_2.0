@@ -26,20 +26,11 @@ For each transaction that's attached to the Tangle, two previous transactions ar
 
 # Roadmap
 
-We are going to build this solition step by step
-
-## Milestone 0 
-Connect to the Tangle
 
 ## Milestone 1
-Create self-declaration json and push it to the DevNet. Pushing a self-declaration is equivalent to issuing a transaction.
-
-A transaction is a single transfer instruction that can either withdraw IOTA tokens from an address, deposit them into an address, or have zero-value (contain data, a message, or a signature). If you want to send anything to an IOTA network, you must send it to a node as a transaction.
-
-For this purpose we will use a Zero-value transaction: A transaction that has 0 value and might carry messages or signatures.
+Connect to the Tangle and create dummy self-declaration json and push it to the DevNet. Pushing a self-declaration is equivalent to issuing a transaction.
 
 A transaction’s unique identifier in IOTA is the TransactionHash, that is generated from the trytes of the transaction. If any trytes change in the transaction, the returning transaction hash would alter. This way, transaction hashes ensure the immutability of the Tangle.
-
 
 To become accepted by the network, a transaction has to be attached to the Tangle. The attachment process means that the transaction should reference two unconfirmed transactions (tips) in the Tangle and do a small proof-of-work. 
 
@@ -47,5 +38,11 @@ To send or receive any transaction using the Tangle, you will need to specify an
 
 Addresses are generated from your seed through cryptographic functions. There are 957 different addresses that one might generate from a seed
 
+## Milestone 2
 
+Send several dummy self-declarations to a one address
+
+## Milestone 3
+
+Retrieve all transactions sent to this address and parse the content
 
