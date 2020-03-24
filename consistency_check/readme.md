@@ -16,7 +16,7 @@ Describe the declared path as a sequence of planar coordinates
 
 Given the Path S, apply a geometric transformation to all points in S. Apply a projection to get planar coordinates from gps coordinates in dd format
 
-## Mileston 1
+## Milestone 1
 
 From a sequence of planar coordinates, create a sequence of intermediate equidistant points
  

@@ -43,13 +43,32 @@ plt.title('Original Path VS Extended ')
 plt.draw()
 plt.pause(0.001)
 
-# Define random control point C and plot it
+# Define random control point C and plot it. Hardcoding random ranges
 x_c = float(decimal.Decimal(random.randrange(0,50))/100)
 y_c = float(decimal.Decimal(random.randrange(0,50))/100)
+C = ( x_c , y_c )
 plt.plot(x_c,y_c,'k*')
 
 # Find closest point to C in the discretized path and plot it
 index = utils.closest_node((x_c,y_c),projected_coord_extended)
-plt.plot(projected_coord_extended[index][0],projected_coord_extended[index][1],'c*')
+Pp = (projected_coord_extended[index][0] , projected_coord_extended[index][1] )
+plt.plot(Pp[0], Pp[1] ,'c*')
+
+# Once we have the closest point Pp  of the discretized path,
+# we need to consider two possible segments.
+
+# First one starting from Pp 
+if index+1 < len(projected_coord_extended):
+	Pp_next = (projected_coord_extended[index+1][0] , projected_coord_extended[index+1][1] )
+	candidate1, dist1 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], C )
+
+
+if index-1 > 0:
+	Pp_prev = (projected_coord_extended[index-1][0] , projected_coord_extended[index-1][1] )
+	candidate2, dist2 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , C)
+
+
+print(dist2)
+print(dist1)
 
 input("Press [enter] to continue.")
