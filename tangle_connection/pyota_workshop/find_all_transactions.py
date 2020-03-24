@@ -1,19 +1,21 @@
 from iota.commands.extended import find_transaction_objects
-from iota import Address
+from iota import Iota, Address
 
-list_add = [Address('LBWRSAKI9RGXUUNJGCPRNRYMFIIZEFOKOZGUUFRMA9IXVENWA9QCDHEQVXOBPTI9FTW9NYSZFSSQNHEIBQGQQJQAFC')]
-transactions = find_transaction_objects(addresses=list_add)
+# Declare an API object
+api = Iota('https://nodes.devnet.iota.org:443', testnet=True)
 
-for transaction in transactions:
-  # Ignore input transactions; these have cryptographic signatures,
-  # not human-readable messages.
-  if transaction.value < 0:
-    continue
+add = input('Insert Address from last milestone: ')
 
-  print(f'Message from {transaction.hash}:')
+list_add = [Address(add)]
+response = api.find_transaction_objects(addresses=list_add)
 
-  message = transaction.signature_message_fragment
-  if message is None:
-    print('(None)')
-  else:
-    print(message.decode())
+if not response['transactions']:
+    print('Couldn\'t find data for the given address.')
+else:
+    print('Found:')
+    # Iterate over the fetched transaction objects
+    for tx in response['transactions']:
+        # data is in the signature_message_fragment attribute as trytes, we need
+        # to decode it into a unicode string
+        data = tx.signature_message_fragment.decode(errors='ignore')
+        print(data)
