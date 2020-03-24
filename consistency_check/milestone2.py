@@ -72,17 +72,8 @@ else:
     candidate1, dist1 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], C )
     Pp_prev = (projected_coord_extended[index-1][0] , projected_coord_extended[index-1][1] )
     candidate2, dist2 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , C)
+    # Pick the closest one
     pt_star = candidate1 if dist1 <= dist2  else candidate2
-
-"""
-if index+1 < len(projected_coord_extended):
-    Pp_next = (projected_coord_extended[index+1][0] , projected_coord_extended[index+1][1] )
-    candidate1, dist1 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], C )
-
-if index-1 > 0:
-    Pp_prev = (projected_coord_extended[index-1][0] , projected_coord_extended[index-1][1] )
-    candidate2, dist2 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , C)
-"""
 
 plt.plot( pt_star[0], pt_star[1] ,'c*')
 
