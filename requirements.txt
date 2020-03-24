@@ -1,5 +1,7 @@
 certifi==2019.11.28
+cffi==1.14.0
 chardet==3.0.4
+cryptography==2.8
 cycler==0.10.0
 idna==2.9
 kiwisolver==1.1.0
@@ -7,10 +9,17 @@ matplotlib==3.0.3
 numpy==1.18.2
 openrouteservice==2.2.3
 pandas==0.24.2
+phx-class-registry==3.0.5
+phx-filters==2.0.2
 pkg-resources==0.0.0
+pycparser==2.20
+pyOpenSSL==19.1.0
+PyOTA==2.1.0
 pyparsing==2.4.6
+pysha3==1.0.2
 python-dateutil==2.8.1
 pytz==2019.3
+regex==2020.2.20
 requests==2.23.0
 six==1.14.0
 urllib3==1.25.8
