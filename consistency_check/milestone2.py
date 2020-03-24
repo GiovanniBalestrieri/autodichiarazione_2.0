@@ -41,6 +41,7 @@ blue_patch = mpatches.Patch(color='blue', label='Extended')
 plt.legend(handles=[red_patch, blue_patch])
 plt.title('Original Path VS Extended ')
 plt.draw()
+plt.gca().set_aspect('equal', adjustable='box')
 plt.pause(0.001)
 
 # Define random control point C and plot it. Hardcoding random ranges
