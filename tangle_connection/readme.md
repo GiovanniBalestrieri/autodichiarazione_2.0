@@ -26,6 +26,9 @@ For each transaction that's attached to the Tangle, two previous transactions ar
 
 # Roadmap
 
+## Milestone 0
+
+Generate a seed and get first available associated address. 
 
 ## Milestone 1
 Connect to the Tangle and create dummy self-declaration json and push it to the DevNet. Pushing a self-declaration is equivalent to issuing a transaction.
