@@ -82,3 +82,29 @@ class Utilities:
         Function to clamp a value n from [ minn, maxn]
         """
         return max(min(maxn, n), minn)
+
+    def find_closest_point_in_path(self, pt, path):
+        # Find closest point to C in the discretized path
+        index = self.closest_node(pt,path)
+        Pp = (path[index][0] , path[index][1] )
+
+        # Once we have the closest point Pp of the discretized path,
+        # We need to consider two possible segments and find the closest point to C
+
+        # Consider three cases:
+        if index == 0 and index+1 < len(path):
+            Pp_next = (path[index+1][0] , path[index+1][1] )
+            candidate1, dist1 = self.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], pt )
+            (pt_star,dist_star) = candidate1, dist1
+        elif index == len(path)-1:
+            Pp_prev = (path[index-1][0] , path[index-1][1] )
+            candidate2, dist2 = self.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , pt)
+            (pt_star,dist_star) = candidate2, dist2
+        else:
+            Pp_next = (path[index+1][0] , path[index+1][1] )
+            candidate1, dist1 = self.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], pt )
+            Pp_prev = (path[index-1][0] , path[index-1][1] )
+            candidate2, dist2 = self.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , pt)
+            # Pick the closest one among the two candidates
+            (pt_star,dist_star) = (candidate1,dist1) if dist1 <= dist2  else (candidate2,dist2)
+        return (pt_star, dist_star)
