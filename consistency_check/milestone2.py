@@ -53,23 +53,37 @@ plt.plot(x_c,y_c,'k*')
 # Find closest point to C in the discretized path and plot it
 index = utils.closest_node((x_c,y_c),projected_coord_extended)
 Pp = (projected_coord_extended[index][0] , projected_coord_extended[index][1] )
-plt.plot(Pp[0], Pp[1] ,'c*')
+#plt.plot(Pp[0], Pp[1] ,'c*')
 
-# Once we have the closest point Pp  of the discretized path,
-# we need to consider two possible segments.
+# Once we have the closest point Pp of the discretized path,
+# We need to consider two possible segments and find the closest point to C
 
-# First one starting from Pp 
+# Consider three cases:
+if index == 0 and index+1 < len(projected_coord_extended):
+    Pp_next = (projected_coord_extended[index+1][0] , projected_coord_extended[index+1][1] )
+    candidate1, dist1 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], C )
+    pt_star = candidate1
+elif index == len(projected_coord_extended)-1:
+    Pp_prev = (projected_coord_extended[index-1][0] , projected_coord_extended[index-1][1] )
+    candidate2, dist2 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , C)
+    pt_star = candidate2
+else:
+    Pp_next = (projected_coord_extended[index+1][0] , projected_coord_extended[index+1][1] )
+    candidate1, dist1 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], C )
+    Pp_prev = (projected_coord_extended[index-1][0] , projected_coord_extended[index-1][1] )
+    candidate2, dist2 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , C)
+    pt_star = candidate1 if dist1 <= dist2  else candidate2
+
+"""
 if index+1 < len(projected_coord_extended):
-	Pp_next = (projected_coord_extended[index+1][0] , projected_coord_extended[index+1][1] )
-	candidate1, dist1 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], C )
-
+    Pp_next = (projected_coord_extended[index+1][0] , projected_coord_extended[index+1][1] )
+    candidate1, dist1 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_next[0], Pp_next[1], C )
 
 if index-1 > 0:
-	Pp_prev = (projected_coord_extended[index-1][0] , projected_coord_extended[index-1][1] )
-	candidate2, dist2 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , C)
+    Pp_prev = (projected_coord_extended[index-1][0] , projected_coord_extended[index-1][1] )
+    candidate2, dist2 = utils.closest_point_to_segment(Pp[0],Pp[1],Pp_prev[0], Pp_prev[1] , C)
+"""
 
-
-print(dist2)
-print(dist1)
+plt.plot( pt_star[0], pt_star[1] ,'c*')
 
 input("Press [enter] to continue.")
