@@ -1,5 +1,18 @@
 # Autodichiarazione_2.0
 
+Content of the self declaration
+
+Fields | Type
+--- | --- 
+Name | char[] 
+Surname | char[] 
+Date of birth | datetime 
+Doc id | char[] 
+Departure time | datetime
+Temperature | float
+Reason  | char[] 
+Destinations | [ [sequence of gps coord], [ ] ]
+
 ---
 
 ## Roadmap
