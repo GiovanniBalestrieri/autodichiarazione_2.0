@@ -7,11 +7,13 @@ Fields | Type
 Name | char[] 
 Surname | char[] 
 Date of birth | datetime 
-Doc id | char[] 
+Doc id number | char[] 
 Departure time | datetime
 Temperature | float
 Reason  | char[] 
 Destinations | [ [sequence of gps coord], [ ] ]
+
+
 
 ---
 
