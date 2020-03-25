@@ -1,6 +1,7 @@
 import json, random, decimal
 import openrouteservice
 from openrouteservice import convert
+from pprint import pprint
 
 # Change your token here
 token = '5b3ce3597851110001cf62488a48a7f1e3ad491184353a3b070c32a2'
@@ -37,9 +38,22 @@ geometry = client.directions(trip,profile='foot-walking')['routes'][0]['geometry
 decoded = convert.decode_polyline(geometry)
 
 path = decoded['coordinates']
-print(path)
 
 ## Simulate a first self declaration from Home to one destination
+
+# create dict to host declaration
+
+declaration = {}
+declaration['name'] = "Gepp"
+declaration['surname'] = "Balestrieri"
+declaration['birthdate'] = "01/01/1900"
+declaration['id'] = "YOLOXXX"
+declaration['time'] = "15:30"
+declaration['temperature'] = "36.5"
+declaration['reason'] = "reason1"
+declaration['destinations'] = path
+
+pprint(declaration)
 
 ## Simulate temporary declaration by pushing it to the distributed digital ledger, the Tangle
 
