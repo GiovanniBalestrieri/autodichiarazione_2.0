@@ -21,7 +21,7 @@ work_one_way = (home, work_spot)
 work_round_trip = (home, work_spot, home)
 
 # Connect to client
-client = openrouteservice.Client(key=token) # Specify your token
+client = openrouteservice.Client(key=token) # Specify your token 
 
 # decode_polyline needs the geometry only
 geometry = client.directions(market_one_way,profile='foot-walking')['routes'][0]['geometry']
