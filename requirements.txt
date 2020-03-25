@@ -15,7 +15,7 @@ pkg-resources==0.0.0
 pycparser==2.20
 pycrypto==2.6.1
 pyOpenSSL==19.1.0
-PyOTA==2.1.0
+PyOTA==2.3.0b1
 pyparsing==2.4.6
 pysha3==1.0.2
 python-dateutil==2.8.1
