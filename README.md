@@ -32,6 +32,7 @@ Destinations | [ [sequence of gps coord], [ ] ]
 ### Milestone 2
 
 - Create two users and two declarations with same destination point and time interval
+- Use visualization tool to show the paths
 
 ### Milestone 3
 
@@ -42,6 +43,7 @@ Destinations | [ [sequence of gps coord], [ ] ]
 ### Milestone 4
 
 - Create two users, two declarations with a portion of the path in common and same time interval
+- Use visualization tool to show the paths
 - Invoke the Check function, should return the orhter User
 
 ### Milestone 5
