@@ -2,8 +2,12 @@ import json, random, decimal
 import openrouteservice
 from openrouteservice import convert
 from pprint import pprint
+from iota import Iota, TryteString, Tag, ProposedTransaction
+from iota.crypto.types import Seed
+import json
 
-# Change your token here
+
+# Change your Open Street Map token here. Required to get directions
 token = '5b3ce3597851110001cf62488a48a7f1e3ad491184353a3b070c32a2'
 
 ## Simulate one user and associate a random home gps coordinate
@@ -53,7 +57,48 @@ declaration['temperature'] = "36.5"
 declaration['reason'] = "reason1"
 declaration['destinations'] = path
 
-pprint(declaration)
 
 ## Simulate temporary declaration by pushing it to the distributed digital ledger, the Tangle
+
+# Generate Seed and retrieve address
+my_seed = Seed.random(length=81)
+print('Your seed is: ' + str(my_seed))
+
+# Declare an API object
+api = Iota(
+    adapter='https://nodes.devnet.iota.org:443',
+    seed=my_seed,
+    testnet=True,
+)
+
+print('Generating the first unused address...')
+# Generate an address from your seed to post the transfer to
+my_address = api.get_new_addresses(index=42)['addresses'][0]
+
+# Convert to JSON format
+json_data = json.dumps(declaration)
+
+print('Constructing transaction locally...')
+# Convert to trytes
+trytes_data = TryteString.from_unicode(json_data)
+
+# Tag is optional here
+my_tag = Tag(b'TESTINFORMATION')
+
+# Prepare a transaction object
+tx = ProposedTransaction(
+    address=my_address,
+    value=0,
+    tag=my_tag,
+    message=trytes_data,
+)
+
+print('Sending transfer...')
+pprint(declaration)
+# Send the transaction to the network
+response = api.send_transfer([tx])
+
+print('Check your transaction on the Tangle!')
+print('https://utils.iota.org/transaction/%s/devnet' % response['bundle'][0].hash)
+print('Tail transaction hash of the bundle is: %s' % response['bundle'].tail_transaction.hash)
 
