@@ -58,7 +58,7 @@ declaration['name'] = "Gepp"
 declaration['surname'] = "Balestrieri"
 declaration['birthdate'] = "01/01/1900"
 declaration['id'] = "YOLOXXX"
-declaration['time'] = "21:30"
+declaration['time'] = "12:00"
 declaration['temperature'] = "36.5"
 declaration['reason'] = "reason1"
 declaration['destinations'] = path_u1
@@ -79,7 +79,8 @@ api = Iota(
 print('Generating the first unused address...')
 # Generate an address from your seed to post the transfer to
 my_address = api.get_new_addresses(index=42)['addresses'][0]
-
+print("Remember this address")
+print(my_address)
 # Convert to JSON format user1
 json_data_u1 = json.dumps(declaration)
 
