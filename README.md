@@ -54,7 +54,11 @@ Destinations | [ [sequence of gps coord], [ ] ]
 
 ## Test the system
 
-Clone the repository: https://github.com/GiovanniBalestrieri/autodichiarazione_2.0.git
+Clone the repository:
+
+```bash
+git clone https://github.com/GiovanniBalestrieri/autodichiarazione_2.0.git
+```
 
 Create and activate vitual environment:
 ```bash
