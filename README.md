@@ -32,7 +32,9 @@ Destinations | [ [sequence of gps coord], [ ] ]
 ### Milestone 2
 
 - Create two users and two declarations with same destination point and time interval
-- Simulate positive results of the CoronaVirus test on User1 
+
+ Assume User 1 is tested positive for the CoronaVirus after some time
+ 
 - Create a Check function that given all declarations in the immutable digital ledger, and the id of a positive citizen returns a list of all possible contaminated users that have shared the same places in the same time. Should return User2 as a possible test candidate
 
 ### Milestone 3
