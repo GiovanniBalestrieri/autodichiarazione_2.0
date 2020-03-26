@@ -21,11 +21,11 @@
   <body>
     <div id="map"></div>
     <script>
-      // In the following example, markers appear when the user clicks on the map.
-      // Each marker is labeled with a single alphabetical character.
       var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       var labelIndex = 0;
-
+      var home_image = 'resources/home.png';
+      var dest_image = 'resources/dest.png';
+      var dot_image = 'resources/dot.png';
 
       var map;
       function initMap() {
@@ -34,16 +34,31 @@
           zoom: 16
         });
 
+        var directionsService = new google.maps.DirectionsService();
+
 
         var myLatLng = {lng: 5.712608, lat: 45.176793};
+        var homeLatLng = {lng: 5.7148, lat: 45.1797};
+        var destLatLng = {lng: 5.7134, lat: 45.1732};
+
+
+
+        var homeLatLng_gmap = new google.maps.LatLng(homeLatLng['lng'],homeLatLng['lat']);
+        var destLatLng_gmap = new google.maps.LatLng(destLatLng['lng'],destLatLng['lat']);
+
+        var homeLatLng_gmap = new google.maps.LatLng( 45.1797, 5.7148 );
+        var destLatLng_gmap = new google.maps.LatLng( 45.1732, 5.7134  );
+
+        calculateAndDisplayRoute( directionsService, homeLatLng_gmap, destLatLng_gmap );
 
         // Add a marker at the center of the map.
-        addMarker(myLatLng, map);
-
+        addUserMarker(myLatLng, map);
+        addTargetMarker(homeLatLng, map, home_image);
+        addTargetMarker(destLatLng, map, dest_image);
 
       }
 
-      function addMarker(location, map) {
+      function addUserMarker(location, map) {
         // Add the marker at the clicked location, and add the next-available label
         // from the array of alphabetical characters.
         var marker = new google.maps.Marker({
@@ -52,6 +67,36 @@
           map: map
         });
       }
+
+      function addTargetMarker(location, map, image) {
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map,
+          icon: image
+        });
+      }
+
+      function calculateAndDisplayRoute(directionsService, from, to) {
+         directionsService.route(
+             {
+               origin: from,
+               destination: to,
+               travelMode: 'WALKING'
+             },
+             function(response, status) {
+               if (status === 'OK') {
+                 //console.log(response);
+                 var pointsArray = [];
+                 pointsArray = response.routes[0].overview_path;
+                 for ( var i=0; i < pointsArray.length; i++) {
+                   addTargetMarker(pointsArray[i], map,dot_image);
+                 }
+               } else {
+                 window.alert('Directions request failed due to ' + status);
+               }
+             });
+       }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL-zzjmQatF12WWG2umtqjRJBSz9ovGOc&callback=initMap"
     async defer></script>
