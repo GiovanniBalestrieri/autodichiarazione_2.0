@@ -28,6 +28,7 @@ for i in list_bundle_hash:
     # Fetch the corresponding bundle objects
     try:
         bundle = api.get_bundles([i])['bundles'][0]
+        print(api.get_bundles([i]))
         content =   bundle.get_messages()
         print(content)
     except Exception as e:
