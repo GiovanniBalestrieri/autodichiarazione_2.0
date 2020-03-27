@@ -35,20 +35,22 @@ Destinations | [ [sequence of gps coord], [ ] ]
 - Use visualization tool to show the paths
 
 ### Milestone 3
+ 
+- Retrieve all declarations sent to specific address
+ [Issue compromised content: https://iota.stackexchange.com/questions/2499/problem-retrieving-the-content-of-zero-value-transactions-from-the-testnet]
+
+## Mileston 4
 
  Assume User 1 is tested positive for the CoronaVirus after some time
- 
-- Retrieve all declarations of User 1.
- [Issue compromised content: https://iota.stackexchange.com/questions/2499/problem-retrieving-the-content-of-zero-value-transactions-from-the-testnet]
 - Create a Check function that given all declarations in the immutable digital ledger, and the id of a positive citizen returns a list of all possible contaminated users that have shared the same places in the same time. Should return User2 as a possible test candidate
 
-### Milestone 4
+### Milestone 5
 
 - Create two users, two declarations with a portion of the path in common and same time interval
 - Use visualization tool to show the paths
 - Invoke the Check function, should return the orhter User
 
-### Milestone 5
+### Milestone 6
 
 - Create N users, N declarations
 - Simulate random positive test results
