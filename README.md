@@ -39,6 +39,7 @@ Destinations | [ [sequence of gps coord], [ ] ]
  Assume User 1 is tested positive for the CoronaVirus after some time
  
 - Retrieve all declarations of User 1.
+ [Issue compromised content: https://iota.stackexchange.com/questions/2499/problem-retrieving-the-content-of-zero-value-transactions-from-the-testnet]
 - Create a Check function that given all declarations in the immutable digital ledger, and the id of a positive citizen returns a list of all possible contaminated users that have shared the same places in the same time. Should return User2 as a possible test candidate
 
 ### Milestone 4

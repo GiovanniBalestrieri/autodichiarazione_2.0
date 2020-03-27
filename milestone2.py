@@ -84,11 +84,19 @@ print(my_address)
 # Convert to JSON format user1
 json_data_u1 = json.dumps(declaration)
 
+print("declaration 1: ")
+print(declaration)
+
+
 # Convert to JSON format user2
 declaration['name'] = "Giovanni"
 declaration['surname'] = "Lucente"
 declaration['destinations'] = path_u2
 declaration['id'] = "YYYYYYY"
+
+
+print("Declaration 2: ")
+print(declaration)
 
 json_data_u2 = json.dumps(declaration)
 
@@ -117,6 +125,7 @@ tx_u2 = ProposedTransaction(
 )
 
 print('Sending transfer...')
+
 # Send the transaction to the network
 response = api.send_transfer([tx_u1])
 response2 = api.send_transfer([tx_u2])
