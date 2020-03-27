@@ -8,6 +8,7 @@ Name | char[]
 Surname | char[] 
 Date of birth | datetime 
 Doc id number | char[] 
+Geographical sector id | char[] 
 Departure time | datetime
 Temperature | float
 Reason  | char[] 
