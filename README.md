@@ -55,7 +55,10 @@ Destinations | [ [sequence of gps coord], [ ] ]
 
 - Create N users, N declarations
 - Simulate random positive test results
-- Get list of possible contaminated citizens and detailed information related to exposure
+
+### Milestone 7
+
+ Get list of possible contaminated citizens and detailed information related to exposure
 
 ---
 
