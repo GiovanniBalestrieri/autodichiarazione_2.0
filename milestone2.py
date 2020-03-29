@@ -129,7 +129,7 @@ print('Sending transfer...')
 
 # Send the transaction to the network
 response = api.send_transfer([tx_u1])
-#response2 = api.send_transfer([tx_u2])
+response2 = api.send_transfer([tx_u2])
 
 print('Check your transaction on the Tangle for user 1')
 print('https://utils.iota.org/transaction/%s/devnet' % response['bundle'][0].hash)
