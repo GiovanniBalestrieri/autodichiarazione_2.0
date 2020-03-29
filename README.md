@@ -63,7 +63,7 @@ Investigate how to determine if two citizens have shared a portion of the path
 
 - Create N users, N declarations
 - Push to the Tangle
-- Simulate random positive test results
+- Simulate random positive test results citizen with universally unique identifier XYZ
 - Get list of possible contaminated citizens and detailed information related to exposure by retrieving declarations pushed on the Tangle and by considering if citizen have been to the same destination of a COVID19 patient and if they have shared a portion of the path at the same time.
 - Associate a constant probability to each candidate as a function of their exposure to the COVID19 patient
 
