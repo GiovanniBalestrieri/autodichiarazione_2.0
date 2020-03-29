@@ -4,19 +4,19 @@ Video presentation: https://www.youtube.com/watch?v=Ce1ZMYNVdmQ&feature=youtu.be
 
 ---
 
-Content of the self declaration
+Content of the self declaration 
 
 Fields | Type
 --- | --- 
-Name | char[] 
-Surname | char[] 
-Date of birth | datetime 
-Doc id number | char[] 
+UUID Citizen | char[] 
+Dpi measures | char[]
+Simptoms | char[]
+Temperature | float
 Geographical sector id | char[] 
 Departure time | datetime
-Temperature | float
+Arrival time | datetime
 Reason  | char[] 
-Destinations | [ [sequence of gps coord], [ ] ]
+Destinations | [ [(gps_coord, timestamps) ], [ ] ]
 
 ---
 
