@@ -69,6 +69,7 @@ for i in all_declarations_terni:
             if 'info' in dic:
                 print(dic['info'])
                 time_of_commitment.append(dic['info']['start time'])
+                all_declarations_terni.remove(i)
 
 print(time_of_commitment)
 
@@ -80,12 +81,17 @@ for i in time_of_commitment:
     max_date = date_obj + timedelta(minutes=15)
     print(str(type(min_date)) + "\t\t" + str(min_date))
     print(str(type(max_date)) + "\t\t\t" + str(max_date))
-
+    
+    list_same_time_trip = []
     for i in all_declarations_terni:  
         date_i = datetime.strptime(dic['info']['start time'], '%m-%d-%Y_%H:%M:%S')
         dic = ast.literal_eval(i[0])
         print("Valutando: " + str(date_i))
         if date_i >=  min_date and date_i < max_date:
-            print("Valid")
-        else:
-            print("False")
+            # Needs further investigation
+            print("Need further investigation: " + str(dic['directions']))
+               
+        else: 
+            # Can be skipped
+            pass
+
