@@ -57,6 +57,7 @@ infected_id = 1692
 ## Fetch all trips of infected user
 
 # prepare list of time intervals during which infected user went for a walk outside
+infected_trips = []
 time_of_commitment = []
 
 for i in all_declarations_terni:
@@ -68,14 +69,22 @@ for i in all_declarations_terni:
             print("Found infected id")
             if 'info' in dic:
                 print(dic['info'])
-                time_of_commitment.append(dic['info']['start time'])
+                #time_of_commitment.append(dic['info']['start time'])
+                infected_trips.append(dic)
                 all_declarations_terni.remove(i)
 
-print(time_of_commitment)
+#print(time_of_commitment)
+print(infected_trips)
 
 
-for i in time_of_commitment:
-    date_obj = datetime.strptime(time_of_commitment[0], '%m-%d-%Y_%H:%M:%S')
+high_probability_constant = 0.8
+low_probability_constant = 0.2
+
+list_of_candidate_infected = {}
+
+#for i in time_of_commitment:
+for i in infected_trips:
+    date_obj = datetime.strptime(i['info']['start time'], '%m-%d-%Y_%H:%M:%S')
     print("Riferimento: " + str(date_obj))
     min_date = date_obj - timedelta(minutes=15)
     max_date = date_obj + timedelta(minutes=15)
@@ -83,15 +92,26 @@ for i in time_of_commitment:
     print(str(type(max_date)) + "\t\t\t" + str(max_date))
     
     list_same_time_trip = []
-    for i in all_declarations_terni:  
+    for j in all_declarations_terni:  
+        dic = ast.literal_eval(j[0])
         date_i = datetime.strptime(dic['info']['start time'], '%m-%d-%Y_%H:%M:%S')
-        dic = ast.literal_eval(i[0])
         print("Valutando: " + str(date_i))
         if date_i >=  min_date and date_i < max_date:
             # Needs further investigation
             print("Need further investigation: " + str(dic['directions']))
-               
+            if i['directions'][-1] == dic['directions'][-1]:
+                # Case same destination and same time
+                print("same destination")
+                # TODO sum all contributions 
+                list_of_candidate_infected[i['uuid']]=high_probability_constant
+            else:
+                # Needs path interception check
+
+                pass
         else: 
             # Can be skipped
             pass
 
+
+print("Number of candidate infeceted based:")
+print(len(list_of_candidate_infected))
