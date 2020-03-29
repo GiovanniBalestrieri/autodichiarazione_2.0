@@ -74,7 +74,7 @@ api = Iota(
 print('Generating the first unused address...')
 # Generate an address from your seed to post the transfer to
 my_address = api.get_new_addresses(index=42)['addresses'][0]
-
+print("HEY! Remember this address! : " + str(my_address))
 # Convert to JSON format
 json_data = json.dumps(declaration)
 
