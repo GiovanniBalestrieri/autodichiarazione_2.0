@@ -4,6 +4,19 @@ from pprint import pprint
 import pickle, ast
 from datetime import datetime, timedelta
 
+
+class Point:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+def ccw(A,B,C):
+    return (C.y-A.y) * (B.x-A.x) > (B.y-A.y) * (C.x-A.x)
+
+# Return true if line segments AB and CD intersect
+def intersect(A,B,C,D):
+    return ccw(A,C,D) != ccw(B,C,D) and ccw(A,B,C) != ccw(A,B,D)
+
 try:
     all_declarations_terni = pickle.load(open("percorsi.pkl", "rb"))
     print("Found Pickle file! Using it")
@@ -98,16 +111,37 @@ for i in infected_trips:
         print("Valutando: " + str(date_i))
         if date_i >=  min_date and date_i < max_date:
             # Needs further investigation
-            print("Need further investigation: " + str(dic['directions']))
+            print("This user " + str(dic['uuid']) + " needs further investigation: " + str(dic['directions']))
             if i['directions'][-1] == dic['directions'][-1]:
                 # Case same destination and same time
                 print("same destination")
                 # TODO sum all contributions 
-                list_of_candidate_infected[i['uuid']]=high_probability_constant
+                list_of_candidate_infected[dic['uuid']]=high_probability_constant
             else:
+                print("Deep investigation")
                 # Needs path interception check
+                itinerary_a = i["directions"]
+                itinerary_b = dic["directions"]
+                
+                # Creo liste di segmenti
+                segments_a = list(zip(itinerary_a, itinerary_a[1:] + [itinerary_a[0]]))
+                segments_b = list(zip(itinerary_b, itinerary_b[1:] + [itinerary_b[0]]))
 
-                pass
+                # TODO use to sum all contributions of intersections in paths
+                n_intersections = 0
+
+                for segm_a in segments_a:
+                    for segm_b in segments_b:
+                        a = Point(segm_a[0][0],segm_a[0][1])
+                        b = Point(segm_a[1][0],segm_a[1][1])
+                        c = Point(segm_b[0][0],segm_b[0][1])
+                        d = Point(segm_b[1][0],segm_b[1][1])
+    
+                        if intersect(a, b, c, d):
+                            print("found intersecting path")
+                            # TODO sum all contributions
+                            list_of_candidate_infected[dic['uuid']]=low_probability_constant
+     
         else: 
             # Can be skipped
             pass
@@ -115,3 +149,4 @@ for i in infected_trips:
 
 print("Number of candidate infeceted based:")
 print(len(list_of_candidate_infected))
+print(list_of_candidate_infected)
