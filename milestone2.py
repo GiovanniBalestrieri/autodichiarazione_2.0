@@ -71,7 +71,8 @@ print('Your seed is: ' + str(my_seed))
 
 # Declare an API object
 api = Iota(
-    adapter='https://nodes.devnet.iota.org:443',
+    adapter='https://nodes.devnet.iota.org:443',#tcp://zmq.devnet.iota.org:5556
+    #adapter='tcp://zmq.devnet.iota.org:5556',
     seed=my_seed,
     testnet=True,
 )
@@ -128,7 +129,7 @@ print('Sending transfer...')
 
 # Send the transaction to the network
 response = api.send_transfer([tx_u1])
-response2 = api.send_transfer([tx_u2])
+#response2 = api.send_transfer([tx_u2])
 
 print('Check your transaction on the Tangle for user 1')
 print('https://utils.iota.org/transaction/%s/devnet' % response['bundle'][0].hash)
