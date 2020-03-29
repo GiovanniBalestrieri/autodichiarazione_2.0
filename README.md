@@ -18,7 +18,6 @@ Arrival time | datetime
 Reason  | char[] 
 Destinations | [ [(gps_coord, timestamps) ], [ ] ]
 
-![Powered by IOTA](resources/iota-1.png?raw=true "Powered by IOTA")
 
 
 ---
@@ -100,3 +99,12 @@ pythone milestone0.py
 
 When you are done. Deactivate the virtual environment and go back to normal life
 
+--- 
+
+#### Resources
+
+- https://www.iota.org/verticals/ehealth
+
+---
+
+![Powered by IOTA](resources/iota-1.png?raw=true "Powered by IOTA")
