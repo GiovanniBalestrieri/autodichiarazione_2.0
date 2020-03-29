@@ -18,9 +18,7 @@ Arrival time | datetime
 Reason  | char[] 
 Destinations | [ [(gps_coord, timestamps) ], [ ] ]
 
-
-![Iota DAG](/resources/iota-1.png)
-Format: ![Alt Text](https://www.iota.org/)
+![Powered by IOTA](resources/iota-1.png?raw=true "Powered by IOTA")
 
 
 ---
