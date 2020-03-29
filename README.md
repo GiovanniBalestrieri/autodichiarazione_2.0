@@ -89,3 +89,11 @@ Install requirements:
 pip install -r requirements.txt
 ```
 
+Test the milestone you prefer. If you are interested in the output of mileston0:
+
+```bash
+pythone milestone0.py
+```
+
+When you are done. Deactivate the virtual environment and go back to normal life
+
