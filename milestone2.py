@@ -72,7 +72,6 @@ print('Your seed is: ' + str(my_seed))
 # Declare an API object
 api = Iota(
     adapter='https://nodes.devnet.iota.org:443',#tcp://zmq.devnet.iota.org:5556
-    #adapter='tcp://zmq.devnet.iota.org:5556',
     seed=my_seed,
     testnet=True,
 )

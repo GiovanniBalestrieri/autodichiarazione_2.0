@@ -2,6 +2,7 @@ from iota.commands.extended import find_transaction_objects
 from iota import Iota, Address
 from pprint import pprint
 import pickle, ast
+from datetime import datetime, timedelta
 
 try:
     all_declarations_terni = pickle.load(open("percorsi.pkl", "rb"))
@@ -70,3 +71,21 @@ for i in all_declarations_terni:
                 time_of_commitment.append(dic['info']['start time'])
 
 print(time_of_commitment)
+
+
+for i in time_of_commitment:
+    date_obj = datetime.strptime(time_of_commitment[0], '%m-%d-%Y_%H:%M:%S')
+    print("Riferimento: " + str(date_obj))
+    min_date = date_obj - timedelta(minutes=15)
+    max_date = date_obj + timedelta(minutes=15)
+    print(str(type(min_date)) + "\t\t" + str(min_date))
+    print(str(type(max_date)) + "\t\t\t" + str(max_date))
+
+    for i in all_declarations_terni:  
+        date_i = datetime.strptime(dic['info']['start time'], '%m-%d-%Y_%H:%M:%S')
+        dic = ast.literal_eval(i[0])
+        print("Valutando: " + str(date_i))
+        if date_i >=  min_date and date_i < max_date:
+            print("Valid")
+        else:
+            print("False")
