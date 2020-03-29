@@ -25,7 +25,8 @@ except:
     # Declare an API object
     api = Iota('https://nodes.devnet.iota.org:443', testnet=True)
 
-    add = 'FNVOAXUEWEGMDRYUFIPCTQOOXIIKBINADOEEHFHLQ9WNZSOCMEOUTIT999HBBFPFBAQGPQCL9UWLRWOIW'
+    add = 'WHROQRSMHOVUXOIRUQDJAKBKLGTJMOPRPSBQBNQHRBLLSICDCQFZPIR9YXRQUTYXMITDLWRMLCUQPOTYB'
+#    add = 'FNVOAXUEWEGMDRYUFIPCTQOOXIIKBINADOEEHFHLQ9WNZSOCMEOUTIT999HBBFPFBAQGPQCL9UWLRWOIW'
 
     list_add = [Address(add)]
     response = api.find_transaction_objects(addresses=list_add)
@@ -65,7 +66,7 @@ except:
 print("Retrieved: " + str(len(all_declarations_terni)))
 
 # Assume citizen with uuid 1226 is tested positive for the CoronaVirus after some time
-infected_id = 1692
+infected_id = 1306
 
 ## Fetch all trips of infected user
 
