@@ -46,28 +46,22 @@ Destinations | [ [(gps_coord, timestamps) ], [ ] ]
 - Retrieve all declarations sent to specific address
  [Issue compromised content: https://iota.stackexchange.com/questions/2499/problem-retrieving-the-content-of-zero-value-transactions-from-the-testnet]
 
-## Mileston 4 [ Skipped straigth to Milestone 7 ]
+## Milestone 4
 
- Assume User 1 is tested positive for the CoronaVirus after some time
-- Create a Check function that given all declarations in the immutable digital ledger, and the id of a positive citizen returns a list of all possible contaminated users that have shared the same places in the same time. Should return User2 as a possible test candidate
+- Create N users, N declarations in the same geographical area
+- Push declarations to the Tangle
 
-### Milestone 5 [ Skipped ]
-
-- Create two users, two declarations with a portion of the path in common and same time interval
-- Use visualization tool to show the paths
-- Invoke the Check function, should return the orhter User
-
-### Milestone 6 
+### Milestone 5 
 
 Investigate how to determine if two citizens have shared a portion of the path
 
-### Milestone 7
+### Milestone 6
 
-- Create N users, N declarations
-- Push to the Tangle
-- Simulate random positive test results citizen with universally unique identifier XYZ
-- Get list of possible contaminated citizens and detailed information related to exposure by retrieving declarations pushed on the Tangle and by considering if citizen have been to the same destination of a COVID19 patient and if they have shared a portion of the path at the same time.
-- Associate a constant probability to each candidate as a function of their exposure to the COVID19 patient
+Assume one user is tested positive for the CoronaVirus after some time
+
+- Retrieve all declarations from the immutable ledger
+- Simulate random positive test results citizen with universally unique identifier
+- Create a Check function that given all retrieved declarations, and the id of a positive citizen returns a list of all possible contaminated users that have shared the same places at the same time and associate an number proportional to the exposure 
 
 ---
 
