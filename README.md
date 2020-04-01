@@ -18,8 +18,6 @@ Arrival time | datetime
 Reason  | char[] 
 Destinations | [ [(gps_coord, timestamps) ], [ ] ]
 
-
-
 ---
 
 ## Roadmap
