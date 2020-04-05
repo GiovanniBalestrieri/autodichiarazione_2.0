@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.30)  5 APR 2020 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.30)  5 APR 2020 18:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,7 +544,11 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 \c@teor=\count135
 \c@defn=\count136
  (./paper.aux
-(./summary.aux) (./contact_tracing.aux
+(./summary.aux
+
+LaTeX Warning: Label `fig:hi_low' multiply defined.
+
+) (./contact_tracing.aux
 
 LaTeX Warning: Label `fig:hi_low' multiply defined.
 
@@ -718,7 +722,13 @@ File: imgs/phones_1.pdf Graphic file (type pdf)
 <use imgs/phones_1.pdf>
 Package pdftex.def Info: imgs/phones_1.pdf used on input line 23.
 (pdftex.def)             Requested size: 357.3842pt x 231.47809pt.
-)
+ <imgs/arch.png, id=163, 1030.85126pt x 664.4825pt>
+File: imgs/arch.png Graphic file (type png)
+
+<use imgs/arch.png>
+Package pdftex.def Info: imgs/arch.png used on input line 44.
+(pdftex.def)             Requested size: 309.25777pt x 199.34628pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -726,6 +736,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <./imgs/phones_1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3 <./imgs/arch.png>]
 \openout2 = `contact_tracing.aux'.
 
  (./contact_tracing.tex
@@ -733,7 +755,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--9
 
  []
 
-<imgs/algo_eu.png, id=189, 553.06625pt x 534.99875pt>
+<imgs/algo_eu.png, id=196, 553.06625pt x 534.99875pt>
 File: imgs/algo_eu.png Graphic file (type png)
  <use imgs/algo_eu.png>
 Package pdftex.def Info: imgs/algo_eu.png used on input line 17.
@@ -745,10 +767,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3
+[4
 
 
-] <imgs/hi_low.png, id=195, 764.8575pt x 477.785pt>
+] <imgs/hi_low.png, id=203, 764.8575pt x 477.785pt>
 File: imgs/hi_low.png Graphic file (type png)
  <use imgs/hi_low.png>
 Package pdftex.def Info: imgs/hi_low.png used on input line 27.
@@ -760,21 +782,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <./imgs/algo_eu.png>])
+[5 <./imgs/algo_eu.png>])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <./imgs/hi_low.png>]
+[6 <./imgs/hi_low.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]
+[7]
 \openout2 = `race.aux'.
 
  (./race.tex
@@ -788,7 +810,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7
+[8
 
 
 ]
@@ -802,14 +824,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8])
+[9])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9]
+[10]
 \openout2 = `our_approach.aux'.
 
  (./our_approach.tex)
@@ -819,7 +841,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10
+[11
 
 
 ]
@@ -837,7 +859,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11
+[12
 
 
 ]
@@ -850,7 +872,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12
+[13
 
 
 ]
@@ -863,7 +885,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13
+[14
 
 
 ]
@@ -876,7 +898,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14
+[15
 
 
 ]
@@ -889,7 +911,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15
+[16
 
 
 ]
@@ -927,7 +949,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16
+[17
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
@@ -945,10 +967,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 214.
  ) 
 Here is how much of TeX's memory you used:
- 11305 strings out of 493029
- 163255 string characters out of 6136233
+ 11312 strings out of 493029
+ 163357 string characters out of 6136233
  393876 words of memory out of 5000000
- 14529 multiletter control sequences out of 15000+600000
+ 14533 multiletter control sequences out of 15000+600000
  17031 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,12n,43p,604b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -959,10 +981,10 @@ b></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb
 ></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on paper.pdf (19 pages, 754296 bytes).
+Output written on paper.pdf (20 pages, 821508 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 229 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 264 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 
