@@ -1,6 +1,6 @@
 {\color{PineGreen}\section{Summary}}
 
-This document is a report written during the \textbf{Hack the Crisis NL} online hacakthon\cite{bib1}. We propose a system for secure and privacy-preserving contact tracing . Providing a technological foundation to help slow the spread of the SARS-CoV-2 virus.\\
+This document is a report written during the \textbf{Hack the Crisis NL} online hacakthon\cite{bib1}. We propose a system for secure and privacy-preserving contact tracing. Providing a technological foundation to help slow the spread of the SARS-CoV-2 virus.\\
 
 Goals:
 \begin{itemize}
@@ -10,11 +10,24 @@ Goals:
 \item Automate the process of inferring the list of possible users that might have been exposed to an infected person in the 14 days preceding the test
 \end{itemize} 
 
-The system aims to minimise single point of failure, privacy and security risks for individuals and communities and to guarantee the highest level of data protection.
-We provide a description about security aspects, privacy properties, architecture and the provided features. 
-\\
+The system aims to minimise single point of failure, privacy and security risks for citizens and communities and to guarantee data protection.
 
-%To achieve this goal, users continually run a smartphone app that broadcasts an ephemeral,
+To achieve this goal, we use mobile applications to continuously track anonymous users (we do not ask them to provide email,name, surname or ID numbers) and ask them to report symptoms, if they are using Individual Protection Devices or Protective Clothing when they go out. The information is encrypted and stored in an ummutable decentralized digital ledger called Tangle. If a citizen is tested positive, verified Health Departments send his universal unique identifier (uuid) of the the application to the Tangle and flags it as an infected uuid. \\
+\\
+As soon as a new infected uuid is published on the ledger a computer (no server is required, works with a personal computer as well) performs the contact tracing task and uuids at risk are broadcasted.\\
+If the application sees its uuid on the Tangle, the user is notified
+
+
+We use mobile applications to track the anonymous user and report his symptoms
+
+2) Information is encrypted and stored in an immutable decentralized digital ledger called Tangle
+
+3) If a citizen is tested positive, verified health departments broadcast the id on the ledger
+
+4) As soon as a new infected id is available, the contact tracing is performed. Resulting ids and associated risk are broadcast
+
+5) If the App sees its id then the user is notified
+
 %pseudo-random ID representing the user and also record pseudo-random IDs observed from
 %smartphones in close proximity. Whenever a patient is diagnosed, he or she can upload
 %some anonymous data from their phone to a central server. This step should only be done
@@ -27,6 +40,8 @@ We provide a description about security aspects, privacy properties, architectur
 %finding better policies to prevent further infections
 
 Additionally, the system enables users to voluntarily provide information to epidemiologists to enable studies of the evolution of disease in the region of interest and to assist in finding better policies to prevent further infections.
+\\
+We provide a description about security aspects, privacy properties, architecture and the provided features. 
 \\
 The code is available on Github and released under the GNU GPL v3 license so that further protection mechanisms can be added if weaknesses are identified and additional features can be added by the community.
 
