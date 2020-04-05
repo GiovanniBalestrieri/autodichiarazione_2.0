@@ -1,0 +1,178 @@
+{\color{PineGreen}\section{Control Strategies}}
+In this section we will walk through several control strategies considered in this project. We will then show the results obtained in simulation using the perturbed and constrained model introduced in Section \ref{subsec:pertconstrained} and finally the experimental data.
+\begin{center}
+	\begin{figure}[H]
+	    \includegraphics[scale=0.4]{imgs/sys_c.jpg}
+ 		\caption{Control system block diagram}
+ 		\label{fig:system}
+	\end{figure}
+\end{center}
+{\color{PineGreen}\subsection{Requirements}\label{subsec:requirements}}
+In this subsection we will discuss the control strategies used to drive linear and angular displacements to the desired values $y_{des}$ and $\theta_{des}$. Let us consider the linear and angular tracking errors such that:
+\begin{equation}
+\label{eq:errors_theta}
+    e_{\theta}(k) = \theta_{des} - \theta(k) = -\theta(k)
+\end{equation}
+
+\begin{equation}
+\label{eq:errors_theta}
+    e_{y}(k) = y_{des} - y(k) = -y(k)
+\end{equation}
+in which $ y_{des} = \theta_{des} = 0$.\\
+\\
+The following requirements have been considered:
+\begin{itemize}
+	\item Zero steady state error without output measurement errors, dead zones and state perturbations
+	\item Steady State error: $\pm 2 cm$ of linear displacement
+	\item Overshoot {\color{PineGreen}$\leq 4cm$}
+	\item Rise Time: {\color{PineGreen}To be defined, depends on the application.}
+	\item Settling Time: {\color{PineGreen}To be defined, depends on the application.}
+\end{itemize}
+% Add extra space to fit equations
+\vspace{3cm}
+
+{\color{PineGreen}\subsection{Complementary approach}\label{subsec:compl}}
+The input $u(k)$ is described by the following control law. The control action is a given by a static weighted sum of the linear and angular components $u_{y}(k)$ and $u_{\theta}(k)$. In this approach, the weight $\sigma$ is fixed.
+The control law is described by:
+\begin{equation}
+    u(k) = \omega(k) = \sigma u_{y}(k) +(1-\sigma) u_{\theta}(k)
+\end{equation}
+\begin{align}
+    u_{y}(k) = & g(e_y(k),e_y(k-1))\\
+   	u_{\theta}(k) = & g(e_{\theta}(k),e_{\theta}(k-1))
+\end{align}
+in which $h(\cdot,\cdot)$ and $g(\cdot,\cdot)$ are two pid functions.
+\\
+{\color{PineGreen}\subsubsection{Simulated and experimental results}\label{subsubsec:compl_res}}
+
+The pid gains considered in the simulation were $kp = 16$ for the angular displacement pid
+controller and $kp = 6$ for the linear displacement compensator. During the experiment, the controller gains designed in simulation were used and data was acquired from the E-Cordeau module placed on the robotic platform Toutilo.\\
+\\
+Results are shown in the table below:\\
+\small
+\noindent 
+\begin{center}
+\makesavenoteenv{tabular}
+    \begin{tabular}{ | p{5cm}| p{4cm} | p{4cm}|}
+    \hline
+    steady state offset error & Simulation & Reality \\ 
+    \hline    
+	Angular & 1 degree & 2.5 degrees	\\
+    \hline    
+	Linear & 10 px = 1.7 cm & 8 px = 1.0cm \\
+    \hline    
+    \end{tabular}
+\end{center}
+State trajectories for initial conditions $y_0=100px$ and $\theta_0=0$ are depicted in the following figures.
+\begin{center}
+	\begin{figure}[H]
+    \centering
+    \subfloat[Simulation]{{\includegraphics[width=7cm]{imgs/sim_compl.png} }}%
+    \qquad
+    \subfloat[Reality]{{\includegraphics[width=7cm]{imgs/real_compl.png} }}%
+    \caption{State trajectories}%
+    \label{fig:comple_res}%
+\end{figure}
+\end{center}
+
+{\color{PineGreen}\subsection{Blending Function approach}\label{subsec:blend}}
+In this approach, the weight $\sigma(\Delta_y)$ is a function of the linear displacement $\Delta_y$ .
+The control law is described by:
+\begin{equation}
+    u(k) = \omega(k) = \sigma(\Delta y) u_{y}(k) +(1-\sigma(\Delta y)) u_{\theta}(k)
+\end{equation}
+\begin{equation}
+  u_y(k)=\begin{cases}
+    90 \quad \text{if} \quad \Delta_y  \quad \text{is $\geq 0$},\\
+    -90 \quad \text{if} \quad \Delta_y  \quad \text{is $< 0$}.
+  \end{cases}
+\end{equation}
+\begin{align}    
+   	u_{\theta}(k) = & g(e_{\theta}(k),e_{\theta}(k-1))\\
+   	\sigma(\Delta y) = & 1 - e^{\gamma \mid \Delta y \mid ^{k}}
+\end{align}
+in which $h(\cdot,\cdot)$ is a pid functions.\\
+The following picture depicts the shape of the blending function $\sigma(\Delta y)$ in red and other candidate functions in green and blue obtained by raising the linear displacement $\Delta y$ to the power $k=2$ and $k=3$ respectively.
+\begin{center}
+	\begin{figure}[H]
+	    \includegraphics[scale=0.2]{imgs/sigma.png}
+ 		\caption{Blending function $\sigma$ for $k=1,2,3$ in red, green and blue}
+ 		\label{fig:sigma}
+	\end{figure}
+\end{center}
+{\color{PineGreen}\subsubsection{Simulated and experimental results}\label{subsubsec:blend_res}}
+Results are shown in the table below:\\
+\small
+\noindent 
+\begin{center}
+\makesavenoteenv{tabular}
+    \begin{tabular}{ | p{5cm}| p{4cm} | p{4cm}|}
+    \hline
+    steady state offset error & Simulation & Reality \\ 
+    \hline    
+	Angular & 0.7 degree & 0.7 degrees	\\
+    \hline    
+	Linear & 5 px = 0.7 cm & 10 px = 1.4cm \\
+    \hline    
+    \end{tabular}
+\end{center}
+State trajectories for different initial conditions are depicted in the following figures. Please note that random measurement errors have been introduced in the simulation.
+\begin{center}
+	\begin{figure}[H]
+    \centering
+    \subfloat[Simulation with measurement errors]{{\includegraphics[width=7cm]{imgs/blend_err_mis.png} }}%
+    \qquad
+    \subfloat[Reality]{{\includegraphics[width=7cm]{imgs/blend_real.png} }}%
+    \caption{State trajectories}%
+    \label{fig:comple_res}%
+\end{figure}
+\end{center}
+{\color{PineGreen}\subsection{Pure angular control approach}\label{subsec:pure}}
+In this approach, only one pid contributes to the control action. The input of the controller is a function of the linear and angular errors.\\
+\\
+The control law is described by:
+\begin{equation}
+    u(k) = \omega(k) = u_{\theta}(k)
+\end{equation}
+\begin{equation}
+   	u_{\theta}(k) = g(e_{A}(k,\Delta y,\Delta \theta),e_{A}(k-1,\Delta y,\Delta \theta))\\
+\end{equation}
+\begin{equation}
+    e_A(k,\Delta y,\Delta \theta) = f(\Delta y,\Delta \theta)
+\end{equation}
+in which $g(\cdot,\cdot)$ is a pid functions and $f(\cdot,\cdot)$ is a continuous function.\\
+
+{\color{PineGreen}\subsubsection{Simulated and experimental results}\label{subsubsec:pure_res}}
+Results are shown in the table below:\\
+\small
+\noindent 
+\begin{center}
+\makesavenoteenv{tabular}
+    \begin{tabular}{ | p{5cm} | p{4cm} | p{4cm}|}
+    \hline
+    steady state offset error & Simulation & Reality \\ 
+    \hline    
+	Angular & 0.2 degree & TODO	\\
+    \hline    
+	Linear & 0 px & TODO \\
+    \hline    
+    \end{tabular}
+\end{center}
+State trajectories are depicted in the following figures. Please note that random measurement errors have been introduced in the simulation.
+%\begin{center}
+%	\begin{figure}[H]
+%    \centering
+%    \subfloat[Simulation with measurement errors]{{\includegraphics[width=7cm]{imgs/pure_sim.png} }}%
+%    \qquad
+%    \subfloat[Reality]{{\includegraphics[width=7cm]{imgs/blend_real.png} }}%
+%    \caption{State trajectories}%
+%    \label{fig:comple_res}%
+%\end{figure}
+%\end{center}
+	\begin{figure}[H]
+\begin{center}
+	    \includegraphics[height=7cm]{imgs/pure_sim.png}
+ 		\caption{simulation with measurement errors}
+ 		\label{fig:system}
+\end{center}
+	\end{figure}

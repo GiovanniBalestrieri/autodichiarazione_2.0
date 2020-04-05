@@ -1,0 +1,4 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Annexe}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Time to Market}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Alpha}{1}{subsection.1.2}

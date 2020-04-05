@@ -1,0 +1,26 @@
+\BOOKMARK [1][-]{section.1}{Summary}{}% 1
+\BOOKMARK [1][-]{section.2}{Contact Tracing}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Description}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Current base approaches}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{The Netherlands}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Italy}{subsection.2.2}% 6
+\BOOKMARK [1][-]{section.3}{The race to new methods}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Main idea}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Bluetooth based methods}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Gps Alternatives}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Related problems}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.5}{Indentified proprietary solutions}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Our approach}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Time contrained decisions}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Possibility to include bluetooth}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Solved problems}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.4}{Related problems}{section.4}% 17
+\BOOKMARK [1][-]{section.5}{Architecture}{}% 18
+\BOOKMARK [2][-]{subsubsection.5.0.1}{Mobile applications}{section.5}% 19
+\BOOKMARK [3][-]{subsubsection.5.0.2}{RiskAssesor}{subsubsection.5.0.1}% 20
+\BOOKMARK [3][-]{subsubsection.5.0.3}{Distributed Digital Ledger}{subsubsection.5.0.1}% 21
+\BOOKMARK [1][-]{section.6}{The race to new methods}{}% 22
+\BOOKMARK [1][-]{section.7}{Data protection}{}% 23
+\BOOKMARK [1][-]{section.8}{Scalability}{}% 24
+\BOOKMARK [1][-]{section.9}{Epidemiological Research}{}% 25
+\BOOKMARK [0][-]{section.9}{References}{}% 26
