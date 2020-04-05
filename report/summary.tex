@@ -12,21 +12,20 @@ Goals:
 
 The system aims to minimise single point of failure, privacy and security risks for citizens and communities and to guarantee data protection.
 
-To achieve this goal, we use mobile applications to continuously track anonymous users (we do not ask them to provide email,name, surname or ID numbers) and ask them to report symptoms, if they are using Individual Protection Devices or Protective Clothing when they go out. The information is encrypted and stored in an ummutable decentralized digital ledger called Tangle. If a citizen is tested positive, verified Health Departments send his universal unique identifier (uuid) of the the application to the Tangle and flags it as an infected uuid. \\
+To achieve this goal, we use mobile applications to continuously track anonymous users (we do not ask them to provide email,name, surname or ID numbers) and ask them to report symptoms, if they are using Individual Protection Devices or protective clothing when they go out. The information is encrypted and stored in an ummutable decentralized digital ledger called Tangle. 
+Whenever a patient is diagnosed, verified Health Departments, testing laboratories or Drive In testing facilities send his universal unique identifier (uuid) of the the application to the Tangle and flags it as an infected uuid. \\
 \\
 As soon as a new infected uuid is published on the ledger a computer (no server is required, works with a personal computer as well) performs the contact tracing task and uuids at risk are broadcasted.\\
-If the application sees its uuid on the Tangle, the user is notified.
+If the application sees its uuid on the Tangle, the user is notified of the risk so that he/she can then take preventive actions such as self-isolating or wearing a ffp3 mask.
 
+\begin{figure}[H]
+	\begin{center}
+	    \includegraphics[scale=0.9]{imgs/phones_1.pdf}
+ 		\caption{Self-report information about the symptoms}
+ 		\label{fig:hi_low}
+	\end{center}
+\end{figure}
 
-We use mobile applications to track the anonymous user and report his symptoms
-
-2) Information is encrypted and stored in an immutable decentralized digital ledger called Tangle
-
-3) If a citizen is tested positive, verified health departments broadcast the id on the ledger
-
-4) As soon as a new infected id is available, the contact tracing is performed. Resulting ids and associated risk are broadcast
-
-5) If the App sees its id then the user is notified
 
 %pseudo-random ID representing the user and also record pseudo-random IDs observed from
 %smartphones in close proximity. Whenever a patient is diagnosed, he or she can upload
