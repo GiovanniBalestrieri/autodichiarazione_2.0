@@ -82,3 +82,5 @@ Install requirements:
 pip install -r requirements.txt
 ```
 
+![Git Flow](https://nvie.com/img/git-model@2x.png)
+

@@ -20,7 +20,7 @@
 \contentsline {subsubsection}{\numberline {5.0.1}Mobile applications}{12}{subsubsection.5.0.1}
 \contentsline {subsubsection}{\numberline {5.0.2}RiskAssesor}{12}{subsubsection.5.0.2}
 \contentsline {subsubsection}{\numberline {5.0.3}Distributed Digital Ledger}{12}{subsubsection.5.0.3}
-\contentsline {section}{\numberline {6}The race to new methods}{13}{section.6}
+\contentsline {section}{\numberline {6}Step by step analysis}{13}{section.6}
 \contentsline {section}{\numberline {7}Data protection}{14}{section.7}
 \contentsline {section}{\numberline {8}Scalability}{15}{section.8}
 \contentsline {section}{\numberline {9}Epidemiological Research}{16}{section.9}
