@@ -33,7 +33,7 @@ mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.4
 notebook==6.4.1
-numpy==1.21.0
+numpy==1.22.0
 openrouteservice==2.2.3
 overpy==0.4
 pandas==0.25.0
